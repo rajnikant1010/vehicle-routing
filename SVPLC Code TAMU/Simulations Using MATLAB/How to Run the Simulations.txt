@@ -1,0 +1,11 @@
+How to Run the Simulations
+
+1. Please unwrap the .zip file into a folder. Set this folder to be the working directory of your MATLAB software. 
+
+2. To set up your own simulations, please set your inputs and modify the desirable parameters in "param.m":
+
+In the "cases" corresponding to input datasets, input the coordinates of all waypoints (WPs), landmarks (LMs) and the order of waypoints that the vehicle should follow and visit in sequence. 
+
+Please modify the desirable parameters in the sections of "Simulation Parameters" and "Case Dependent Parameters".
+
+3. To run your own simulations, please run "param.m" first, following the instructions prompted on the screen; once ready to run your own simulations, please type "RunSimulation(P1)" from MATLAB's command line and enter. You should be able to obtain results by then.

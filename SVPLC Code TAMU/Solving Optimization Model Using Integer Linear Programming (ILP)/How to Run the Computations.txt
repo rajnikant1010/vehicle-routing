@@ -1,0 +1,26 @@
+How to Run the Computations
+
+1. Please compile and build the source codes into a program. The source codes are written in C++ and should be able to compile and build in LINUX systems. 
+
+We assume that the well-known BOOST library has been preinstalled. In addition, solving our optimization model using Integer Linear Programming (ILP) would require a solver. We used the well-known IBM ILOG CPLEX. Gurobi is another well-known solver. If you work in the academia, you should be able to obtain both of them free of charge. 
+
+Moreover, we also used the LEMON graph library. It works well in LINUX systems; but, unfortunately, from our experience, it has some compatibility issue with MS Windows systems. 
+
+If you are using a LINUX system, the makefile attached could be a helpful reference, but you would need to reset the folder directories to be the working directories on your LINUX system. 
+
+2. To set up your own computations, please set your inputs and modify the desirable parameters in a file, just like the ones in the "15" folder:
+
+In the instances files corresponding to input datasets: 
+
+For the top four lines, input the number of all waypoints (WPs), the number of all potential landmark locations, the length of the interval we use to split/partition the edges in the graph (please refer to Figure 4 of our IEEE Access journal paper on this SVPLC problem), and the sensing range of the on-board sensors, respectively;
+
+Then, input the coordinates of all waypoints (WPs);
+
+Finally, input the coordinates of all landmarks (LMs). 
+
+3. Please note: for your own instance, if the field-of-view (FOV) is smaller than 180 degrees, please change the numerical value of "0.707" in "utilities.cpp" to the cosine value of (FOV/2); "0.707" actually corresponds to the case where the FOV is 90 degrees. 
+If the field-of-view (FOV) is greater than or equal to 180 degrees, please change "0.707" to 0.   
+
+In addition, for your own instance, please change the numerical value of "20" in "main.cpp" (line 133 of the current version) to the cost of placing a landmark, that you would like to set to.
+
+4. Link your own instance file with the C++ program. You should be able to obtain results by then.

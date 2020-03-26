@@ -1,0 +1,22 @@
+How to Run the Computations
+
+1. Please compile and build the source codes into a program. The source codes are written in C++ and should be able to compile and build in both LINUX and MS Windows systems. 
+
+We assume that the well-known BOOST library has been preinstalled. If you are using a LINUX system, the makefile attached could be a helpful reference, but you would need to reset the folder directories to be the working directories on your LINUX system. 
+
+2. To set up your own computations, please set your inputs and modify the desirable parameters in a file, just like the ones in the "Instances" folder:
+
+In the "Instances" files corresponding to input datasets: 
+
+For the top three lines, input the number of all waypoints (WPs), the number of all potential landmark locations, and the sensing range of the on-board sensors, respectively;
+
+Then, input the coordinates of all waypoints (WPs);
+
+Then, input the order of waypoints that the vehicle should follow and visit in sequence; such a sequence should be determined by an effective heuristic being used to solve a standard single vehicle TSP problem. We used the well-known LKH heuristic. Since it is not our contribution, please refer to LKH heuristic -- one of its original authors has published an "official" computer implementation of it.
+  
+Finally, input the coordinates of all landmarks (LMs). 
+
+3. Please note: for your own instance, if the field-of-view (FOV) is smaller than 180 degrees, please change the numerical value of "0.7071" in "main.cpp" to the sine value of (FOV/2); "0.7071" actually corresponds to the case where the FOV is 90 degrees. 
+If the field-of-view (FOV) is greater than or equal to 180 degrees, please change "0.7071" to 1.   
+
+4. Link your own instance file with the C++ program. You should be able to obtain results by then.
